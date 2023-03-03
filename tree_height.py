@@ -32,7 +32,7 @@ def main():
         skaits = int(input())
         elementi = list(map(int ,input().split()))
         
-    elif "F" or "f" in text:
+    if "F" or "f" in text:
         nosaukums = input()
         nosaukums = "test/"+ nosaukums
         with open(nosaukums, 'r') as dati:
