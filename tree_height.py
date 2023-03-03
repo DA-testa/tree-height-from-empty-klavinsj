@@ -28,13 +28,13 @@ def compute_height(n, parents):
 def main():
     # implement input form keyboard and from files
     text = input()
-    if "I" or "i" in text:
+    if "I" in text:
         skaits = int(input())
         elementi = list(map(int ,input().split()))
         
-    if "F" or "f" in text:
+    if "F" in text:
         nosaukums = input()
-        nosaukums = "test/"+ nosaukums
+        nosaukums = "./test/"+ nosaukums
         with open(nosaukums, 'r') as dati:
             skaits = int(dati.readLine())
             elementi = list(map(int , dati.readLine().split()))
@@ -46,7 +46,7 @@ def main():
     # input number of elements
     # input values in one variable, separate with space, split these values in an array
     # call the function and output it's result
-    pass
+    
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
@@ -54,5 +54,5 @@ def main():
 sys.setrecursionlimit(10**7)  # max depth of recursion
 threading.stack_size(2**27)   # new thread will get stack of such size
 threading.Thread(target=main).start()
-
+# main()
 # print(numpy.array([1,2,3]))
