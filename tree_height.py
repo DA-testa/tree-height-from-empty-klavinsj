@@ -6,15 +6,40 @@ import numpy
 
 
 def compute_height(n, parents):
-    # Write this function
+    augstums = [-1] * n
+
+    def aprekinat_augstumu(elements):
+        if augstums[elements] != -1:
+            return augstums[elements]
+        if parents[elements] == -1:
+            augstums[elements] = 1
+        else:
+            parent_h = aprekinat_augstumu(parents[elements])
+            augstums[elements] = parent_h + 1
+        return augstums[elements]
+
+
     max_height = 0
-    # Your code here
+    for x in range(n):
+        max_height = max(max_height, aprekinat_augstumu(x))
     return max_height
 
 
 def main():
     # implement input form keyboard and from files
-    
+    text = input()
+    if "I" or "i" in text:
+        skaits = input()
+        elementi = list(map(int ,input().split()))
+        
+    elif "F" or "f" in text:
+        nosaukums = input()
+        nosaukums = "test/"+ nosaukums
+        with open(nosaukums, 'r') as dati:
+            skaits = dati.readLine()
+            elementi = list(map(int , dati.readLine().split()))
+    print(compute_height(skaits, elementi))
+
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
     
