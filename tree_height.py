@@ -29,14 +29,14 @@ def main():
     # implement input form keyboard and from files
     text = input()
     if "I" or "i" in text:
-        skaits = input()
+        skaits = int(input())
         elementi = list(map(int ,input().split()))
         
     elif "F" or "f" in text:
         nosaukums = input()
         nosaukums = "test/"+ nosaukums
         with open(nosaukums, 'r') as dati:
-            skaits = dati.readLine()
+            skaits = int(dati.readLine())
             elementi = list(map(int , dati.readLine().split()))
     print(compute_height(skaits, elementi))
 
