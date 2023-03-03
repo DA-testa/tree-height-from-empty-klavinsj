@@ -33,11 +33,11 @@ def main():
         elementi = list(map(int ,input().split()))
         
     if "F" in text:
-        nosaukums = input()
+        nosaukums = str(input())
         nosaukums = "./test/"+ nosaukums
         with open(nosaukums, 'r') as dati:
-            skaits = int(dati.readLine())
-            elementi = list(map(int , dati.readLine().split()))
+            skaits = int(dati.readline()) #skaits
+            elementi = list(map(int, dati.readline().split()))  
     print(compute_height(skaits, elementi))
 
     # let user input file name to use, don't allow file names with letter a
